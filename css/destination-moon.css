@@ -1,0 +1,340 @@
+:root{
+    --title:'Bacasime Antique', serif;
+    --text:'Hind Madurai', sans-serif;
+    --text2:'GFS Neohellenic', sans-serif;
+    --color-text:rgb(255, 255, 255);
+    --color-text2:rgb(180, 180, 180);
+}
+.header{
+    background-image:url(../assets/destination/background-destination-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    overflow-x:auto;
+}
+.line{
+    display: none;
+}
+.hamburger{
+    background-image: url(../assets/shared/icon-hamburger.svg);
+    width: 22px;
+    height: 22px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+.link_tablet{
+    display: none;
+}
+.navegation{
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0px;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+}
+.container__links__tablet{
+    display: none;
+}
+
+.label{
+    justify-self: end;
+    cursor: pointer;
+}
+.menu{
+    display: none;
+}
+.menu__form{
+    /*hacemos flexible la caja para acomodar los elementos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*le decimso con el top 80px que se vaya hasta arriba pero que deje un margen de 80px*/
+    top: 0;
+    /*con el bottom 0 indicamos que cubra toda la pantalla, termine en el 0*/
+    bottom: 0;
+    /*la posicion la volvemos fixed, quiere decir que se va a mantener en su posicion fija*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /*con el left 0 le decimo que cubra hasta la izquierda*/
+    left: 0;
+    /*con el clip-path le decimos que la forma sea de un circulo, y que de inicio, mida 0% del contenedor y que inicie desde el centro por lo tanto al medir 0%, el contenedor no se mostara, si le pusieramos otro porcentaje, se mostraria acorde a su porcentaje */
+    clip-path:circle(0% at left);
+    /*transicion para que se muestre la animacion del clip-path*/
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s ease-in-out;
+}
+.menu:checked + .menu__form{
+    /*aqui ya le decimos que se muestre, y que llegue hasta el 100% de su contenedor*/
+    clip-path: circle(100% at left);
+    clip-path: inset(0 0 0 0);
+}
+.list__menu{
+   display: flex;
+   width: 100%;
+   height: 100%;
+   background-image: url(../assets/crew/maxresdefault.jpg);
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+.list_form{
+    background-image: url(../assets/crew/black2.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 30px white;
+    
+}
+.links{
+    padding-left: 30%;
+    text-decoration: none;
+    color: rgb(149, 116, 224);
+    font-family: var(--text);
+    text-shadow: 1px 1px 10px rgb(69, 5, 143);
+    
+}
+.links:hover{
+    text-shadow: 1px 1px 10px rgb(231, 231, 231);
+}
+/*contenedores*/
+.header{
+    height: 100%;
+}
+.section{
+    width: 90%;
+    margin: 0 auto;
+}
+.article{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 300px 500px;
+    grid-template-areas: " navegation text1"
+                         "img img";
+}
+.img__moon{
+    margin: auto;
+    width: 80%;
+    max-width: 500px;
+    object-fit: contain;
+}
+.container__img{
+    display: flex;
+    grid-area: img;
+}
+.navegation2{
+    grid-area: navegation;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(128, 128, 128, 0.205),rgba(0, 0, 0, 0.062));
+}
+.container__Text{
+    grid-area: text1;
+    display: grid;
+    align-items: center;
+}
+/*navegacion*/
+.links__pages{
+    margin-bottom: 40px;
+}
+/*textos*/
+.title__h1{
+    text-align: center;
+    color: var(--color-text);
+    font-family: var(--text);
+        padding-bottom: 10px;
+}
+.links__pages{
+    text-decoration: none;
+    color: var(--color-text);
+    font-family: var(--text2); 
+    font-size: 20px;
+}
+.links__pages:hover{
+    color: rgb(73, 71, 85);
+    transform: scale(1.2);
+    text-shadow: 0px 0px 10px rgb(14, 14, 13);
+    transition: 0.5s;
+}
+.site{
+    font-size: 50px;
+    font-family: var(--title);
+    color: var(--color-text);
+    text-align: center;
+}
+.text{
+    width: 80%;
+    margin: 0 auto;
+    color: var(--color-text2);
+    font-family: var(--text);
+}
+.data1{
+    font-size: 12px;
+    color: var(--color-text2);
+    margin-bottom: 10px;
+}
+.data2{
+    font-size: 25px;
+    color: var(--color-text);
+    font-family: var(--text);
+    font-weight: 600;
+}
+.selected{
+    border-bottom: 3px solid whitesmoke;
+}
+.selected:hover{
+    border-bottom: 3px solid rgb(66, 62, 70);
+}
+/* contenedor de la data*/
+.container___data{
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    border-top: 3px solid rgba(34, 33, 33, 0.425);
+}
+.data_min_cont{
+    margin: 10px 0px;
+}
+
+@media(min-width:750px) {
+    .label,.menu__form, .list_form, .menu__form, .hamburger{
+        display: none;
+    }
+    .menu__form{
+        width: 0%;
+        height: 0%;
+    }
+    .destination{
+        border-bottom: 3px solid whitesmoke;
+    }
+    .header{
+        background-image:url(../assets/destination/background-destination-tablet.jpg);
+        height: 100vh;
+    }
+    .link_tablet{
+        color: white;
+        display: block;
+        text-decoration: none;
+        font-family: var(--text);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .link_tablet:hover{
+        color: rgba(211, 211, 211, 0.37);
+        transform: scale(1.2);
+        height:80%;
+        transition: 0.4s;
+        transition-delay: 0.2s;
+    }
+    .navegation{
+        width: 100%;
+        height: 100px;
+        padding: 0px;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+    .logo{
+        margin-left: 10%;
+    }
+    .container__links__tablet{
+        align-self: center;
+        justify-self: end;
+        display: initial;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        width: 80%;
+        background-color:transparent;
+    }
+    .background{
+        position: absolute;
+        width: 55%;
+        z-index:-3;
+        height: 14.5%;
+        filter: opacity(10%);
+        background-color: rgb(72, 72, 73);
+        right: 0;
+    }
+}
+@media(min-width:1000px) {
+    .header{
+     background-image:url(../assets/destination/background-destination-desktop.jpg);
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    }
+    .background{
+        background: rgb(0, 0, 0);
+        z-index: -1;
+        filter: blur(50px);
+        opacity: 10px;
+    }
+    .line{
+        display: initial;
+        height: 2px;
+        width: 44%;
+        left: 10%;
+        background-color: rgb(48, 45, 45);
+        position: absolute;
+    }   
+    .article{
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: 50px 500px;
+        grid-template-areas: 
+                             "img navegation"
+                             "img text1";
+    }
+    .container__Text{
+        grid-template-rows: repeat(3,160px);
+    }
+    .article{
+        height: 90%;
+        margin: auto;
+    }
+    .img__moon{
+        max-width: 500px;
+        width: 100%;
+    }
+    .navegation2{
+        flex-direction: row;
+        width: 80%;
+        margin: 0 auto;
+        background-image: none;
+        align-items: start;
+        justify-content: start;
+    }
+    .links__pages{
+        margin: auto 10px;
+    }
+    .site{
+        width: 80%;
+        text-align: start;
+        margin: 0 auto;
+    }
+    .text{
+        align-self: flex-start;
+    }
+    .title__h1{
+        text-align:start;
+       width: 80%;
+       margin: 0 auto;
+    }
+}

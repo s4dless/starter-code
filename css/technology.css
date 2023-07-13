@@ -1,0 +1,319 @@
+:root{
+    --title:'Bacasime Antique', serif;
+    --text:'Hind Madurai', sans-serif;
+    --color-text:rgb(255, 255, 255);
+    --color-text2:rgb(180, 180, 180);
+}
+
+.header{
+    background-image:url(../assets/technology/background-technology-mobile.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    overflow-x: auto;
+}
+.line{
+    display: none;
+}
+.hamburger{
+    background-image: url(../assets/shared/icon-hamburger.svg);
+    width: 22px;
+    height: 22px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+.link_tablet{
+    display: none;
+}
+.navegation{
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0px;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+}
+.container__links__tablet{
+    display: none;
+}
+
+.label{
+    justify-self: end;
+    cursor: pointer;
+}
+.menu{
+    display: none;
+}
+.menu__form{
+    /*hacemos flexible la caja para acomodar los elementos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*le decimso con el top 80px que se vaya hasta arriba pero que deje un margen de 80px*/
+    top: 0;
+    /*con el bottom 0 indicamos que cubra toda la pantalla, termine en el 0*/
+    bottom: 0;
+    /*la posicion la volvemos fixed, quiere decir que se va a mantener en su posicion fija*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /*con el left 0 le decimo que cubra hasta la izquierda*/
+    left: 0;
+    /*con el clip-path le decimos que la forma sea de un circulo, y que de inicio, mida 0% del contenedor y que inicie desde el centro por lo tanto al medir 0%, el contenedor no se mostara, si le pusieramos otro porcentaje, se mostraria acorde a su porcentaje */
+    clip-path:circle(0% at left);
+    /*transicion para que se muestre la animacion del clip-path*/
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s ease-in-out;
+}
+.menu:checked + .menu__form{
+    /*aqui ya le decimos que se muestre, y que llegue hasta el 100% de su contenedor*/
+    clip-path: circle(100% at left);
+    clip-path: inset(0 0 0 0);
+}
+.list__menu{
+   display: flex;
+   width: 100%;
+   height: 100%;
+   background-image: url(../assets/crew/maxresdefault.jpg);
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+.list_form{
+    background-image: url(../assets/crew/black2.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    margin: auto;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 30px white;
+    
+}
+.links{
+    padding-left: 30%;
+    text-decoration: none;
+    color: rgb(149, 116, 224);
+    font-family: var(--text);
+    text-shadow: 1px 1px 10px rgb(69, 5, 143);
+    
+}
+.links:hover{
+    text-shadow: 1px 1px 10px rgb(231, 231, 231);
+}
+/*contenedores*/
+.container__section{
+    width: 80%;
+    margin: 0 auto;
+}
+.article_container{
+    display: grid;
+    grid-template-rows: 100px 350px 350px;
+    grid-auto-flow: row;
+    grid-template-areas:"circles"
+    "text1"
+    "image";
+}
+.circle__container{
+    grid-area:circles;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.text_container{
+    grid-area: text1;
+}
+.img__container{
+    grid-area: image;
+    height: 100%;
+    text-align: center;
+}
+.img__crew{
+    text-align: center;
+    height: 100%;
+    width: 90%;
+}
+.img__crew{
+    object-fit: cover;
+}
+.circle{
+    width: 70px;
+    height: 70px;
+    background-color:transparent;
+    border:1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+.circle__selected{
+    color: rgb(0, 0, 0);
+}
+.circle__selected{
+    background-color: white;
+}
+.a__link{
+    text-decoration: none;
+
+}
+/*texto*/
+.h1__section{
+    color: var(--color-text);
+    font-family: var(--text);
+    font-size: 30px;
+    text-align: center;
+}
+.h2__crew{
+    color: var(--color-text);
+    font-size:50px;
+    font-family: var(--title);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.span__crew{
+    display: block;
+    color: var(--color-text2);
+    font-size: 20px;
+    font-family: var(--text);
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+.text{
+    margin: 0 auto;
+    width: 90%;
+    color: var(--color-text2);
+    text-align: center;
+}
+.number{
+    color: var(--color-text2);
+}
+@media(min-width:750px) {
+    .label,.menu__form, .list_form, .menu__form, .hamburger{
+        display: none;
+    }
+    .menu__form{
+        width: 0%;
+        height: 0%;
+    }
+    .header{
+        background-image:url(../assets/technology/background-technology-tablet.jpg);
+
+    }
+    .text3{
+        margin-bottom: 10%;
+    }
+    .link_tablet{
+        color: white;
+        display: block;
+        text-decoration: none;
+        font-family: var(--text);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .link_tablet:hover{
+        color: rgba(211, 211, 211, 0.37);
+        transform: scale(1.2);
+        height:80%;
+        transition: 0.4s;
+        transition-delay: 0.2s;
+    }
+    .home{
+        border-bottom: 3px solid whitesmoke;
+    }
+    .navegation{
+        width: 100%;
+        height: 100px;
+        padding: 0px;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+    .logo{
+        margin-left: 10%;
+    }
+    .container__links__tablet{
+        align-self: center;
+        justify-self: end;
+        display: initial;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        width: 80%;
+        background-color:transparent;
+    }
+    .background{
+        position: absolute;
+        width: 55%;
+        z-index:-3;
+        height: 14.5%;
+        filter: opacity(10%);
+        background-color: rgb(72, 72, 73);
+        right: 0;
+    }
+}
+@media(min-width:1000px) {
+    .header{
+        background-image:url(../assets/technology/background-technology-desktop.jpg);
+    position: relative;
+    z-index: 2;
+
+    }
+    .background{
+        background: rgb(0, 0, 0);
+        z-index: -1;
+        filter: blur(50px);
+        opacity: 10px;
+    }
+    .line{
+        display: initial;
+        height: 2px;
+        width: 46%;
+        left: 10%;
+        background-color: rgb(48, 45, 45);
+        position: absolute;
+    } 
+    .article_container{
+        display: grid;
+        grid-template-rows: 500px;
+        grid-template-columns: 20% 40% 40%;
+        grid-auto-flow: row;
+        grid-template-areas:"circles text1 image";
+    }
+    .circle__container{
+        display: flex;
+        flex-direction:column;
+        align-items: start;
+        margin: auto;
+    }
+    .h1__section{
+        text-align: start;
+    }
+    .span__crew{
+        text-align: start;
+    }
+    .h2__crew{
+        text-align: start;
+    }
+    .text{
+        text-align: start;
+        width: 90%;
+        margin: 0;
+        font-size: 20px;
+    }
+    .text_container{
+        background-color: rgba(0, 0, 0, 0.322);
+    }
+}
